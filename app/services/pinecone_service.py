@@ -4,18 +4,23 @@ import os
 from pinecone import Pinecone, ServerlessSpec
 
 pc = Pinecone(
-        api_key=os.environ.get("PINECONE_API_KEY"), environment='gcp-starter'
-    )
+        api_key=os.environ.get("PINECONE_API_KEY"))
 EMBEDDING_DIMENSION = 1536
-
 def embed_chunks_and_upload_to_pinecone(chunks, index_name):
     if index_name in pc.list_indexes():
         print("\nIndex already exists. Deleting index ...")
         pc.delete_index(name=index_name)
     
     print("\nCreating a new index: ", index_name)
-    pc.create_index(name=index_name,
-                          dimension=EMBEDDING_DIMENSION, metric='cosine')
+    # pc.create_index(
+    #     name=index_name,
+    #     dimension=EMBEDDING_DIMENSION, # Replace with your model dimensions
+    #     metric="cosine", # Replace with your model metric
+    #     spec=ServerlessSpec(
+    #         cloud="aws",
+    #         region="us-east-1"
+    #     ) 
+    # )
 
     index = pc.Index(index_name)
 
