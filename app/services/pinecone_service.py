@@ -1,21 +1,23 @@
-import pinecone
+
 from app.services.openai_service import get_embedding
 import os
+from pinecone import Pinecone, ServerlessSpec
 
-PINECONE_API_KEY = os.environ.get('PINECONE_API_KEY')
-pinecone.init(api_key=PINECONE_API_KEY, environment='gcp-starter')
+pc = Pinecone(
+        api_key=os.environ.get("PINECONE_API_KEY"), environment='gcp-starter'
+    )
 EMBEDDING_DIMENSION = 1536
 
 def embed_chunks_and_upload_to_pinecone(chunks, index_name):
-    if index_name in pinecone.list_indexes():
+    if index_name in pc.list_indexes():
         print("\nIndex already exists. Deleting index ...")
-        pinecone.delete_index(name=index_name)
+        pc.delete_index(name=index_name)
     
     print("\nCreating a new index: ", index_name)
-    pinecone.create_index(name=index_name,
+    pc.create_index(name=index_name,
                           dimension=EMBEDDING_DIMENSION, metric='cosine')
 
-    index = pinecone.Index(index_name)
+    index = pc.Index(index_name)
 
     # Embedding each chunk and preparing for upload
     print("\nEmbedding chunks using OpenAI ...")
@@ -36,7 +38,7 @@ def get_most_similar_chunks_for_query(query, index_name):
     question_embedding = get_embedding(query)
 
     print("\nQuerying Pinecone index ...")
-    index = pinecone.Index(index_name)
+    index = pinecpcone.Index(index_name)
     query_results = index.query(question_embedding, top_k=3, include_metadata=True)
     context_chunks = [x['metadata']['chunk_text'] for x in query_results['matches']]
 
@@ -44,9 +46,9 @@ def get_most_similar_chunks_for_query(query, index_name):
 
 
 def delete_index(index_name):
-  if index_name in pinecone.list_indexes():
+  if index_name in pc.list_indexes():
     print("\nDeleting index ...")
-    pinecone.delete_index(name=index_name)
+    pc.delete_index(name=index_name)
     print(f"Index {index_name} deleted successfully")
   else:
      print("\nNo index to delete!")
