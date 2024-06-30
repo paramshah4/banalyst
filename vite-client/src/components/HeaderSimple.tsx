@@ -30,7 +30,7 @@ export function HeaderSimple() {
 
   return (
     <header className={classes.header}>
-      <Container size="md" className={classes.inner}>
+      <Container size="xl" className={classes.inner}>
         <UnstyledButton size={46} style={{
           padding: rem(14) + ' ' + rem(16),
           fontSize: rem(32),
