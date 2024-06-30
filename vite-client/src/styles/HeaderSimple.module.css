@@ -4,7 +4,9 @@
   flex-wrap: wrap;
   height: rem(72px);
   margin-bottom: rem(60px);
-  background-color: var(--mantine-color-body);
+  /* background-color: var(--mantine-color-body); */
+  background-image: linear-gradient(to right, #4797FF, #6057FF);
+  /* background-color: red;  */
   border-bottom: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
 }
 
