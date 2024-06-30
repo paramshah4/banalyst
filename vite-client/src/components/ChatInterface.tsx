@@ -208,39 +208,9 @@ function ChatInterface() {
           alignItems: "center",
         }}
       >
-        {/* {messages.map((message, index) => (
+        {messages.map((message, index) => (
           <ChatMessage key={index} message={message} />
-        ))} */}
-        Sure! Here’s a simulated text message conversation among a group of
-        friends planning a weekend trip: **Friday, 6:00 PM** **Alex:** Hey
-        everyone! Just a reminder about our trip this weekend. Who’s excited?
-        **Chris:** Super excited! Can't wait to hit the beach 🏖️ **Jamie:** Same
-        here! Do we have everything sorted out? **Alex:** Yeah, I think so. We
-        have the house booked, and I’ve confirmed the reservation. **Jordan:**
-        What’s the check-in time again? **Alex:** It’s at 3 PM tomorrow. We
-        should aim to leave by 9 AM to avoid traffic. **Chris:** Sounds good.
-        Should we carpool? **Jamie:** Definitely. I can drive if we need another
-        car. **Jordan:** I can fit 3 people in my car. Who’s riding with me?
-        **Chris:** I’ll ride with you, Jordan. **Alex:** I can go with Jamie.
-        **Jordan:** Great! So it’s Chris, me, and one more. Anyone? **Taylor:**
-        I’ll join you guys. **Jordan:** Perfect. We’re set. **Alex:** Do we need
-        to bring anything specific? **Jamie:** I’m bringing snacks and drinks.
-        **Chris:** I’ll bring sunscreen and beach towels. **Jordan:** I’ve got a
-        cooler and ice packs. **Taylor:** I’ll bring a first aid kit just in
-        case. **Alex:** Awesome! Don’t forget your swimsuits and sunglasses.
-        **Chris:** Got it! Are we planning to grill at the house? **Jamie:**
-        Yeah, we should! I can bring some burgers and hotdogs. **Jordan:** I’ll
-        bring buns and condiments. **Taylor:** I’ll grab some chips and dip.
-        **Alex:** I’ll handle the drinks. Is everyone okay with soda and water?
-        **Chris:** Works for me. **Jamie:** Same here. **Jordan:** Perfect.
-        **Taylor:** Sounds good. **Alex:** Great! Let’s meet at my place at 9 AM
-        tomorrow. See you all then! **Saturday, 8:45 AM** **Jamie:** Running a
-        bit late. Be there by 9:15. **Alex:** No worries. We’ll wait for you.
-        **Chris:** Almost at Alex’s place. **Jordan:** Just left my house. See
-        you in a few. **Taylor:** On my way too. **Saturday, 9:20 AM**
-        **Jamie:** Here! Sorry for the delay. **Alex:** No problem. Everyone’s
-        here. Let’s hit the road! **Chris:** Let’s go! Road trip time 🚗💨
-        **Taylor:** Woohoo! See you at the beach, everyone!
+        ))}
         <div ref={messagesEndRef} style={{ margin: 0, padding: 0 }} />
         <form
           className="chat-input"
