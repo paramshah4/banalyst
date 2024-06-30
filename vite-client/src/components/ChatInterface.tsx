@@ -73,7 +73,6 @@ function ChatInterface() {
         flexDirection: "row",
         height: "100vh",
         maxWidth: "100%",
-        margin: "0",
         padding: "0",
         backgroundColor: "#FFFFFF",
       }}
@@ -82,11 +81,11 @@ function ChatInterface() {
         display={"flex"}
         style={{
           flexDirection: "column",
-          height: "100%",
+          minHeight: "100vh",
           width: "23%",
           justifyContent: "space-between",
           alignItems: "center",
-          margin: "0",
+          margin: "2em 0 0 0",
           padding: "0px",
         }}
       >
@@ -131,7 +130,8 @@ function ChatInterface() {
               border: "1px solid #EFEFEF",
               paddingLeft: "1em",
             }}
-          ><img src={settingsIcon} style={{marginRight: "1em"}} />
+          >
+            <img src={settingsIcon} style={{ marginRight: "1em" }} />
             Settings
           </UnstyledButton>
           <UnstyledButton
@@ -150,9 +150,13 @@ function ChatInterface() {
               border: "1px solid #EFEFEF",
               paddingLeft: "1em",
             }}
-          ><Avatar src={avatarIcon} style={{
-            marginRight: "1em",
-          }}></Avatar>
+          >
+            <Avatar
+              src={avatarIcon}
+              style={{
+                marginRight: "1em",
+              }}
+            ></Avatar>
             John Smith
           </UnstyledButton>
         </Container>
@@ -161,6 +165,7 @@ function ChatInterface() {
         display={"flex"}
         style={{
           flexDirection: "column",
+          flexGrow: "1",
           maxWidth: "73%",
           margin: "0",
           padding: "0px",
@@ -203,7 +208,7 @@ function ChatInterface() {
         **Jamie:** Here! Sorry for the delay. **Alex:** No problem. Everyone’s
         here. Let’s hit the road! **Chris:** Let’s go! Road trip time 🚗💨
         **Taylor:** Woohoo! See you at the beach, everyone!
-        <div ref={messagesEndRef} />
+        <div ref={messagesEndRef} style={{ margin: 0, padding: 0 }} />
         <form
           className="chat-input"
           onSubmit={handleSendMessage}

@@ -9,7 +9,7 @@ export default function DashboardContainer() {
     return (
         <Container size="xl" style={{
             padding: '0',
-            margin: '0',
+            margin: '2.5em 0 0 0',
             maxWidth: '100%',
             background: '#FFFFFF'
         }}>
