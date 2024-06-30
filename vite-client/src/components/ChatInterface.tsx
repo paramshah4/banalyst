@@ -102,13 +102,15 @@ function ChatInterface() {
           <Button
             style={{
               borderRadius: "5em",
-              height: "4.5em",
+              height: "3.5em",
               maxWidth: "80%",
               fontSize: "0.9rem",
               color: "#FFFFFF",
               width: "18em",
               backgroundImage: "linear-gradient(to right, #4797FF, #6057FF)",
               outline: "none",
+              margin: 0,
+              padding: 0,
             }}
           >
             + New Chat
@@ -117,8 +119,8 @@ function ChatInterface() {
             display={"flex"}
             style={{
               borderRadius: "50%",
-              width: "4.5em",
-              height: "3.5em",
+              width: "50px",
+              height: "50px",
               objectFit: "cover",
               backgroundColor: "#9188ff",
               margin: 0,
