@@ -18,14 +18,40 @@ def save_file(file):
     file.save(filepath)
     return filepath
 
-def process_excel_file(filepath):
-    try:
-        df = pd.read_excel(filepath)
-        text_data = df.to_csv(sep='\t', index=False)
-        text_filepath = os.path.join(UPLOAD_FOLDER, f"{os.path.splitext(filepath)[0]}.txt")
-        with open(text_filepath, 'w') as text_file:
-            text_file.write(text_data)
-        return text_filepath
-    except Exception as e:
-        raise e
+def read_excel_file(file_path):
+    excel_file = pd.ExcelFile(file_path)
+    
+    all_sheets_data = {}
+    
+    for sheet_name in excel_file.sheet_names:
+        sheet_data = pd.read_excel(excel_file, sheet_name=sheet_name)
+        all_sheets_data[sheet_name] = sheet_data
+    
+    return all_sheets_data
+
+def extract_text_from_data(data):
+    text_data = []
+    for sheet, df in data.items():
+        for col in df.columns:
+            text_data.extend(df[col].astype(str).tolist())
+    return text_data
+
+def preprocess_data(data):
+    processed_data = {}
+    for sheet, df in data.items():
+        df = df.fillna('')  # Replace NaNs with empty strings
+        processed_data[sheet] = df
+    return processed_data
+
+def chunk_data(data, max_chunk_size=500):
+    chunks = []
+    for sheet, df in data.items():
+        for _, row in df.iterrows():
+            text = ' '.join(map(str, row.values))
+            if len(text) > max_chunk_size:
+                text_chunks = [text[i:i+max_chunk_size] for i in range(0, len(text), max_chunk_size)]
+                chunks.extend(text_chunks)
+            else:
+                chunks.append(text)
+    return chunks
 
