@@ -72,7 +72,7 @@ function ChatInterface() {
       display={"flex"}
       style={{
         flexDirection: "row",
-        height: "100vh",
+        minHeight: "100vh",
         maxWidth: "100%",
         padding: "0",
         backgroundColor: "#FFFFFF",
