@@ -3,7 +3,9 @@ import pandas as pd
 from . import api_blueprint
 from openai import OpenAI
 from flask import request, jsonify
-from app.services import upload_service, embeddings_service
+from app.services import upload_service, embeddings_service, pinecone_service
+
+PINECONE_INDEX_NAME = 'index237'
 
 @api_blueprint.route('/create_excel_embeddings', methods=['POST'])
 def generate_embeddings_endpoint():
@@ -28,10 +30,16 @@ def generate_embeddings_endpoint():
 
         # return jsonify({"text_data": chunks})
         
-        client = OpenAI()
-        embeddings = embeddings_service.generate_embeddings(client, chunks)
+        # client = OpenAI()
+        # embeddings = embeddings_service.generate_embeddings(client, chunks)
 
-        return jsonify({"embeddings": embeddings})
+        pinecone_service.embed_chunks_and_upload_to_pinecone(chunks, PINECONE_INDEX_NAME)
+        response_json = {
+            "message": "Chunks embedded and stored successfully"
+        }
+        return jsonify(response_json)
+
+        # return jsonify({"embeddings": embeddings})
 
     except Exception as e:
         # Return an error message if something goes wrong
