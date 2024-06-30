@@ -14,7 +14,7 @@ function ChatInterface() {
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    messagesEndRef?.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   useEffect(scrollToBottom, [messages]);
@@ -32,7 +32,7 @@ function ChatInterface() {
     };
 
     // Add a new empty bot message to the UI
-    const botMessage = { text: "", isBot: true };
+    const botMessage = { text: "bob", isBot: true };
     setMessages([...messages, userMessage, botMessage]);
     setInputText("");
 
