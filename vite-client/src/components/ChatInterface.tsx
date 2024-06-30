@@ -5,6 +5,7 @@ import brainIcon from "../assets/brain-icon.png";
 import chatSubmitIcon from "../assets/chat-submit.png";
 import avatarIcon from "../assets/avatar.png";
 import settingsIcon from "../assets/settings-icon.png";
+import searchIcon from "../assets/search-icon.png";
 // import AIAvatarIcon from "../assets/AI-Avatar.png";
 
 function ChatInterface() {
@@ -37,7 +38,7 @@ function ChatInterface() {
 
     // Send the user's message to the server and wait for a response.
     // This response will be streamed to this component.
-    const response = await fetch("http://localhost:5000/handle-query", {
+    const response = await fetch("http://localhost:5000/question", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
@@ -89,19 +90,49 @@ function ChatInterface() {
           padding: "0px",
         }}
       >
-        <Button
+        <Container
+          display={"flex"}
           style={{
-            borderRadius: "5em",
-            height: "4.5em",
-            maxWidth: "80%",
-            fontSize: "0.9rem",
-            color: "#FFFFFF",
-            width: "18em",
-            backgroundImage: "linear-gradient(to right, #4797FF, #6057FF)",
+            flexDirection: "row",
+            alignItems: "center",
+            maxWidth: "90%",
+            gap: "1em",
           }}
         >
-          + New Chat
-        </Button>
+          <Button
+            style={{
+              borderRadius: "5em",
+              height: "4.5em",
+              maxWidth: "80%",
+              fontSize: "0.9rem",
+              color: "#FFFFFF",
+              width: "18em",
+              backgroundImage: "linear-gradient(to right, #4797FF, #6057FF)",
+              outline: "none",
+            }}
+          >
+            + New Chat
+          </Button>
+          <UnstyledButton
+            display={"flex"}
+            style={{
+              borderRadius: "50%",
+              width: "4.5em",
+              height: "3.5em",
+              objectFit: "cover",
+              backgroundColor: "#9188ff",
+              margin: 0,
+              padding: 0,
+              justifyContent: "center",
+              alignItems: "center",
+              outline: "none",
+            }}
+          >
+            <img
+              src={searchIcon}
+            />
+          </UnstyledButton>
+        </Container>
         Chat History
         <Container
           display={"flex"}
