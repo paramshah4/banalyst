@@ -141,7 +141,7 @@ export default function Overview() {
             // margin: '10px',
           }}><span className={classes.category}>Location:</span> <span>United States</span></div>
           <div>
-          <div>
+          {/* <div>
           <Link
             key={"Data Room"}
             href={"/dataroom"}
@@ -152,7 +152,7 @@ export default function Overview() {
           >
              Data Room
           </Link>
-          </div>
+          </div> */}
           </div>
         </Flex>
       </Container>
