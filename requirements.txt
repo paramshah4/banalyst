@@ -7,3 +7,10 @@ flask-cors
 python-dotenv
 gunicorn
 sseclient-py
+langchain
+langchain-community
+pinecone-notebooks
+tiktoken
+streamlit 
+tabulate
+matplotlib
