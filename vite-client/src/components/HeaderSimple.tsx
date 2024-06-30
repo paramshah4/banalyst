@@ -7,7 +7,7 @@ import { Link, useLocation } from "wouter";
 const links = [
   { link: "/home", label: "Home" },
   { link: "/dashboard", label: "Dashboard" },
-  { link: "/dataroom", label: "Data Room" },
+  // { link: "/dataroom", label: "Data Room" },
   { link: "/chat", label: "Chat" },
   { link: "/report", label: "Report" },
 ];

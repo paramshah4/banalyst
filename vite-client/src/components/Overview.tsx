@@ -1,5 +1,6 @@
 import { Container, Image, Flex, Table } from "@mantine/core";
 import classes from "../styles/Overview.module.css";
+import { Link, useLocation } from "wouter";
 
 export default function Overview() {
   const elements = [
@@ -139,6 +140,20 @@ export default function Overview() {
           <div style={{
             // margin: '10px',
           }}><span className={classes.category}>Location:</span> <span>United States</span></div>
+          <div>
+          <div>
+          <Link
+            key={"Data Room"}
+            href={"/dataroom"}
+            className={classes.dataroomlink}
+            // data-active={active === "/dataroom" || undefined}
+            onClick={() => {
+            }}
+          >
+             Data Room
+          </Link>
+          </div>
+          </div>
         </Flex>
       </Container>
       <Table

@@ -15,7 +15,8 @@ function App() {
       <Router>
         {/* <Route path="/chat" component={ChatInterface} /> */}
         <Route path="/" component={DashboardContainer} />
-        <Route path="/dataroom" component={DashboardContainer} />
+        {/* <Route path="/dataroom" component={DashboardContainer} /> */}
+        <Route path="/dashboard" component={DashboardContainer} />
       </Router>
     </MantineProvider>
   );
