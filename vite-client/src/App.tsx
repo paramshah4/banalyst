@@ -6,14 +6,14 @@ import "./App.css";
 
 import { MantineProvider } from "@mantine/core";
 import { Router, Route } from "wouter";
-// import ChatInterface from "./components/ChatInterface";
+import ChatInterface from "./components/ChatInterface.tsx";
 
 function App() {
   return (
     <MantineProvider>
       <HeaderSimple></HeaderSimple>
       <Router>
-        {/* <Route path="/chat" component={ChatInterface} /> */}
+        <Route path="/chat" component={ChatInterface} />
         <Route path="/" component={DashboardContainer} />
         {/* <Route path="/dataroom" component={DashboardContainer} /> */}
         <Route path="/dashboard" component={DashboardContainer} />
