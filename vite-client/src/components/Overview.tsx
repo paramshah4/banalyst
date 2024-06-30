@@ -112,7 +112,7 @@ export default function Overview() {
           }}
         >
           <Image
-            src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="/BananaLogisticsLogo.jpg"
             alt="Overview"
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />
@@ -124,14 +124,20 @@ export default function Overview() {
             justifyContent: "center",
           }}
         >
+          <div>
+            <span className={classes.status}>
+              In Due Diligence
+            </span>
+          </div>
           <div style={{
-            margin: '10px',
+            margin: '-1px',
           }}><span className={classes.companyname}>Banana Logistics</span></div>
           <div style={{
-            margin: '10px',
+            // margin: '10px',
+            marginTop: '16px',
           }}><span className={classes.category}>Industry:</span> <span>Logistics</span></div>
           <div style={{
-            margin: '10px',
+            // margin: '10px',
           }}><span className={classes.category}>Location:</span> <span>United States</span></div>
         </Flex>
       </Container>

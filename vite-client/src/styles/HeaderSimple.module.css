@@ -1,13 +1,12 @@
 .header {
   color:aliceblue;
   flex-direction: row;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  display: flex;  
+  /* flex-wrap: wrap; */
   height: rem(72px);
   margin-bottom: rem(60px);
-  /* background-color: var(--mantine-color-body); */
   background-image: linear-gradient(to right, #4797FF, #6057FF);
-  /* background-color: red;  */
   border-bottom: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
 }
 
@@ -39,4 +38,28 @@
     background-color: var(--mantine-color-blue-filled);
     color: var(--mantine-color-white);
   }
+}
+
+.logo {
+    /* padding: rem(14) + ' ' + rem(16), */
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+
+.rightContainer {
+  display: flex;
+  justify-content: flex-end; 
+  flex: 1;
+  align-items: center;
+}
+
+.icon {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.bananalystLogo {
+  margin-left: 15px;
+
 }

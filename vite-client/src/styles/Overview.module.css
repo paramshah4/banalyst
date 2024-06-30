@@ -6,3 +6,11 @@
   font-size: x-large;
   font-weight: bold;
 }
+
+.status {
+ background-color:#FFEDB4;
+ font-size: small;
+ padding: 5px 5px;
+ /* display: inline-block; */
+ /* font-weight: bold; */
+}

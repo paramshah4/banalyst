@@ -1,13 +1,15 @@
 import { useState } from "react";
-import { Container, Group, Burger, UnstyledButton, rem } from "@mantine/core";
+import { Container, Image, Group, Burger, UnstyledButton, rem } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import classes from "../styles/HeaderSimple.module.css";
 import { Link, useLocation } from "wouter";
 
 const links = [
+  { link: "/home", label: "Home" },
+  { link: "/dashboard", label: "Dashboard" },
   { link: "/dataroom", label: "Data Room" },
   { link: "/chat", label: "Chat" },
-  { link: "/reports", label: "Reports" },
+  { link: "/report", label: "Report" },
 ];
 
 export function HeaderSimple() {
@@ -31,7 +33,32 @@ export function HeaderSimple() {
 
   return (
     <header className={classes.header}>
+      {/* <Container size="xl" className={classes.inner}>
+        <div className={classes.leftContainer}>
+        <UnstyledButton size={46} style={{
+          padding: rem(14) + ' ' + rem(16),
+          fontSize: rem(32),
+        }}>
+          Bananalyst
+        </UnstyledButton>
+        <Group gap={5} visibleFrom="xs">
+          {items}
+        </Group>
+        </div>
+
+
+        <div className={classes.rightContainer}>
+        <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
+        </div>
+      </Container> */}
       <Container size="xl" className={classes.inner}>
+      <div className={classes.bananalystLogo}>
+        <Image
+            src="/ForFutureLogoWhite.png"
+            alt="bananalystlogo"
+            style={{ width: "90%", height: "90%", objectFit: "cover" }}
+          />
+        </div>
         <UnstyledButton
           size={46}
           style={{
@@ -46,8 +73,49 @@ export function HeaderSimple() {
           {items}
         </Group>
 
+
         <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
       </Container>
+
+      <Container className={classes.rightContainer}>
+        <div>
+        <a
+      key={'Create New Deal'}
+      href={'/createnewdeal'}
+      className={classes.link}
+      data-active={active === '/createnewdeal' || undefined}
+      onClick={(event) => {
+        event.preventDefault();
+        setActive('/createnewdeal');
+      }}
+        >
+      Create New Deal
+    </a>        
+        </div>
+        <div className={classes.icon}>
+        <Image
+            src="/SearchBar.png"
+            alt="search"
+            style={{ width: "70%", height: "70%", objectFit: "cover" }}
+          />
+        </div>
+        <div className={classes.icon}>
+        <Image
+            src="/Notificationsicon.png"
+            alt="notification"
+            style={{ width: "70%", height: "70%", objectFit: "cover" }}
+          />
+        </div>
+        <div className={classes.icon}>
+        <Image
+            src="/breeprofile.png"
+            alt="breeprofile"
+            style={{ width: "90%", height: "90%", objectFit: "cover" }}
+          />
+        </div>
+      </Container>
+
+
     </header>
   );
 }
