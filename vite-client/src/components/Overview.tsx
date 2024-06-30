@@ -1,5 +1,5 @@
 import { Container, Image, Flex, Table } from "@mantine/core";
-// import classes from "../styles/Overview.module.css";
+import classes from "../styles/Overview.module.css";
 
 export default function Overview() {
   const elements = [
@@ -60,10 +60,13 @@ export default function Overview() {
         >
           <div style={{
             margin: '10px',
-          }}>Name of the Company</div>
+          }}><span className={classes.companyname}>Banana Logistics</span></div>
           <div style={{
             margin: '10px',
-          }}>Industry</div>
+          }}><span className={classes.category}>Industry:</span> <span>Logistics</span></div>
+          <div style={{
+            margin: '10px',
+          }}><span className={classes.category}>Location:</span> <span>United States</span></div>
         </Flex>
       </Container>
       <Table

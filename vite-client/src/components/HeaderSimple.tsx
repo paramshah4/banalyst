@@ -35,7 +35,7 @@ export function HeaderSimple() {
           padding: rem(14) + ' ' + rem(16),
           fontSize: rem(32),
         }}>
-          Banalyst
+          Bananalyst
         </UnstyledButton>
         <Group gap={5} visibleFrom="xs">
           {items}

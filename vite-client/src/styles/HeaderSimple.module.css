@@ -1,4 +1,5 @@
 .header {
+  color:aliceblue;
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: wrap;
@@ -25,7 +26,8 @@
   margin: rem(4px) rem(6px);
   border-radius: var(--mantine-radius-sm);
   text-decoration: none;
-  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
+  /* color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0)); */
+  color: white;
   font-size: var(--mantine-font-size-sm);
   font-weight: 500;
 
