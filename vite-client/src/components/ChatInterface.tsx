@@ -32,7 +32,7 @@ function ChatInterface() {
     };
 
     // Add a new empty bot message to the UI
-    const botMessage = { text: "bob", isBot: true };
+    const botMessage = { text: "", isBot: true };
     setMessages([...messages, userMessage, botMessage]);
     setInputText("");
 
@@ -55,15 +55,9 @@ function ChatInterface() {
       var { value, done } = await reader.read();
       if (done) break;
       accumulatedAnswer += value;
-      setMessages((currentHistory) => {
-        const updatedHistory = [...currentHistory];
-        const lastChatIndex = updatedHistory.length - 1;
-        updatedHistory[lastChatIndex] = {
-          ...updatedHistory[lastChatIndex],
-          text: accumulatedAnswer,
-        };
-        return updatedHistory;
-      });
+      const botMessage = { text: accumulatedAnswer, isBot: true };
+      setMessages([...messages, userMessage, botMessage]);
+      return
     }
   };
 

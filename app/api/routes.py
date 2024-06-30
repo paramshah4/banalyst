@@ -101,7 +101,7 @@ def question():
     response = qa_chain.run(question)
     print(type(response))
     response_data = jsonify({'body': response})
-    return response_data
+    return response
 
 @api_blueprint.route('/question-answer', methods=['POST'])
 def questionanswer():
