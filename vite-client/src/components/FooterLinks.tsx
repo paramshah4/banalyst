@@ -72,7 +72,7 @@ export function FooterLinks() {
               fontSize: rem(32),
             }}
           >
-            Bananalyst
+            Bananalyst.AI
           </UnstyledButton>
           <Text size="xs" c="dimmed" className={classes.description}>
             Automating Private Equity analyst workflows to reduce cost and

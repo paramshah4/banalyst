@@ -49,7 +49,7 @@ export function HeaderSimple() {
           }}
           onClick={() => setLocation("/")}
         >
-          Bananalyst
+          Bananalyst.AI
         </UnstyledButton>
         <Group gap={5} visibleFrom="xs">
           {items}
