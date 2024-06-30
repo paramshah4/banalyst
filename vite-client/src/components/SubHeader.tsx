@@ -1,6 +1,7 @@
 import { Container, Group } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { useState } from "react";
+import DataView from "./DataView";
 
 export default function SubHeader() {
   const links = [
@@ -22,7 +23,6 @@ export default function SubHeader() {
     <a
       key={link.label}
       href={link.link}
-      // className={classes.link}
       data-active={active === link.link || undefined}
       onClick={(event) => {
         event.preventDefault();
@@ -30,12 +30,16 @@ export default function SubHeader() {
       }}
       style={{
         color: "black",
-        borderRadius: "10px 10px 0px 0px",
-        border: "1px solid #ccc",
-        padding: "10px 10px",
+        borderRadius: "5px 5px 0px 0px",
+        border: "1px solid #DDDDDD",
+        padding: "0.5rem 1rem",
+        backgroundColor: "#F8F8F8",
       }}
     >
-      {link.label}
+      {link.label} <a style={{
+        color: "#DDDDDD",
+        paddingLeft: "1rem"
+      }}>X</a>
     </a>
   ));
 
@@ -43,12 +47,16 @@ export default function SubHeader() {
     <header
     >
       <Container
-        size="xl"
+        style={{
+            display: "flex",
+            justifyContent: "center",
+            maxWidth: "100%",
+            padding: "20px 30px"
+        }}
       >
-        <Group gap={5} visibleFrom="xs" style={{
+        <Group gap={3} visibleFrom="xs" style={{
             display: "flex",
             alignItems: "center",
-            padding: "20px 0",
         }}>
           {items}
         </Group>

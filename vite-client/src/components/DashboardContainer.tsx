@@ -3,6 +3,7 @@ import { Container } from "@mantine/core";
 import Overview from "./Overview";
 import SubHeader from "./SubHeader";
 import { FooterLinks } from "./FooterLinks";
+import DataView from "./DataView";
 
 export default function DashboardContainer() {
     return (
@@ -10,9 +11,11 @@ export default function DashboardContainer() {
             padding: '0',
             margin: '0',
             maxWidth: '100%',
+            background: '#FFFFFF'
         }}>
             <Overview />
             <SubHeader />
+            <DataView />
             <FooterLinks />
         </Container>
     )

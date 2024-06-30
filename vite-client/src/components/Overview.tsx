@@ -3,36 +3,102 @@ import classes from "../styles/Overview.module.css";
 
 export default function Overview() {
   const elements = [
-    { position: 6, mass: 12.011, symbol: "C", name: "Carbon" },
-    { position: 7, mass: 14.007, symbol: "N", name: "Nitrogen" },
-    { position: 39, mass: 88.906, symbol: "Y", name: "Yttrium" },
-    { position: 56, mass: 137.33, symbol: "Ba", name: "Barium" },
-    { position: 58, mass: 140.12, symbol: "Ce", name: "Cerium" },
+    {
+      rowName: "Revenue",
+      2022: "",
+      2023: "",
+      2024: "",
+      2025: "",
+      2026: "",
+      2027: "",
+    },
+    {
+      rowName: "Costs of Goods Sold",
+      2022: "",
+      2023: "",
+      2024: "",
+      2025: "",
+      2026: "",
+      2027: "",
+    },
+    {
+      rowName: "Operating Income",
+      2022: "",
+      2023: "",
+      2024: "",
+      2025: "",
+      2026: "",
+      2027: "",
+    },
+    {
+      rowName: "SG&A",
+      2022: "",
+      2023: "",
+      2024: "",
+      2025: "",
+      2026: "",
+      2027: "",
+    },
+    {
+      rowName: "EBITDA",
+      2022: "",
+      2023: "",
+      2024: "",
+      2025: "",
+      2026: "",
+      2027: "",
+    },
+    {
+      rowName: "Other",
+      2022: "",
+      2023: "",
+      2024: "",
+      2025: "",
+      2026: "",
+      2027: "",
+    },
+    {
+      rowName: "NET income",
+      2022: "",
+      2023: "",
+      2024: "",
+      2025: "",
+      2026: "",
+      2027: "",
+    },
   ];
 
   const rows = elements.map((element) => (
-    <Table.Tr key={element.name}>
-      <Table.Td>{element.position}</Table.Td>
-      <Table.Td>{element.name}</Table.Td>
-      <Table.Td>{element.symbol}</Table.Td>
-      <Table.Td>{element.mass}</Table.Td>
+    <Table.Tr key={element.rowName}>
+      <Table.Td>{element.rowName}</Table.Td>
+      <Table.Td>{element["2022"]}</Table.Td>
+      <Table.Td>{element["2023"]}</Table.Td>
+      <Table.Td>{element["2024"]}</Table.Td>
+      <Table.Td>{element["2025"]}</Table.Td>
+      <Table.Td>{element["2026"]}</Table.Td>
+      <Table.Td>{element["2027"]}</Table.Td>
     </Table.Tr>
   ));
 
   return (
     <Container
-      size="lg"
+      size="xl"
       display={"flex"}
       style={{
         justifyContent: "space-between",
+        maxWidth: "80%",
+        flexWrap: "wrap",
       }}
     >
-      <Container display={"flex"} style={{
-        flexDirection: "row",
-        margin: "0",
-        justifyContent: "center",
-        alignItems: "center"
-      }}>
+      <Container
+        display={"flex"}
+        style={{
+          flexDirection: "row",
+          margin: "0",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
         <div
           style={{
             display: "flex",
@@ -73,13 +139,71 @@ export default function Overview() {
         style={{
           width: "40%",
         }}
+        styles={{
+          thead: {
+            borderBottom: "1px solid #ddd",
+          },
+          tbody: {
+            borderBottom: "1px solid #ddd",
+            padding: "4rem",
+          },
+          tfoot: {
+            borderTop: "1px solid #ddd",
+          },
+          th: {
+            border: "1px solid #ddd",
+            padding: "8px",
+          },
+          td: {
+            border: "1px solid #ddd",
+            padding: "0.5rem 2.25rem",
+            textOverflow: "ellipsis",
+            whiteSpace: "nowrap",
+          },
+        }}
       >
         <Table.Thead>
           <Table.Tr>
-            <Table.Th>Historical</Table.Th>
-            <Table.Th>Line item</Table.Th>
-            <Table.Th>Forward</Table.Th>
-            <Table.Th>Placeholder</Table.Th>
+            <Table.Th
+              style={{
+                border: 0,
+              }}
+            ></Table.Th>
+            <Table.Th
+              colSpan={3}
+              style={{
+                border: "1px",
+                textAlign: "center",
+                backgroundColor: "#F0F0F0",
+              }}
+            >
+              Historic
+            </Table.Th>
+            <Table.Th
+              colSpan={3}
+              style={{
+                border: "1px",
+                textAlign: "center",
+                backgroundColor: "#4E88FF4F",
+              }}
+            >
+              Projected
+            </Table.Th>
+          </Table.Tr>
+          <Table.Tr
+            style={{
+              border: "1px",
+              textAlign: "center",
+              backgroundColor: "#F0F0F0",
+            }}
+          >
+            <Table.Th></Table.Th>
+            <Table.Th>2022</Table.Th>
+            <Table.Th>2023</Table.Th>
+            <Table.Th>2024</Table.Th>
+            <Table.Th>2025</Table.Th>
+            <Table.Th>2026</Table.Th>
+            <Table.Th>2027</Table.Th>
           </Table.Tr>
         </Table.Thead>
         <Table.Tbody>{rows}</Table.Tbody>
