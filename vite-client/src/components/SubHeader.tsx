@@ -1,7 +1,6 @@
 import { Container, Group } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { useState } from "react";
-import DataView from "./DataView";
 
 export default function SubHeader() {
   const links = [
