@@ -31,7 +31,7 @@ export default function Overview() {
         flexDirection: "row",
         margin: "0",
         justifyContent: "center",
-        alignContent: "center"
+        alignItems: "center"
       }}>
         <div
           style={{
