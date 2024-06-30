@@ -33,24 +33,6 @@ export function HeaderSimple() {
 
   return (
     <header className={classes.header}>
-      {/* <Container size="xl" className={classes.inner}>
-        <div className={classes.leftContainer}>
-        <UnstyledButton size={46} style={{
-          padding: rem(14) + ' ' + rem(16),
-          fontSize: rem(32),
-        }}>
-          Bananalyst
-        </UnstyledButton>
-        <Group gap={5} visibleFrom="xs">
-          {items}
-        </Group>
-        </div>
-
-
-        <div className={classes.rightContainer}>
-        <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
-        </div>
-      </Container> */}
       <Container size="xl" className={classes.inner}>
       <div className={classes.bananalystLogo}>
         <Image
@@ -79,18 +61,18 @@ export function HeaderSimple() {
 
       <Container className={classes.rightContainer}>
         <div>
-        <a
-      key={'Create New Deal'}
-      href={'/createnewdeal'}
-      className={classes.link}
-      data-active={active === '/createnewdeal' || undefined}
-      onClick={(event) => {
-        event.preventDefault();
-        setActive('/createnewdeal');
-      }}
-        >
-      Create New Deal
-    </a>        
+          <Link
+            key={'Create New Deal'}
+            href={'/createnewdeal'}
+            className={classes.link}
+            data-active={active === '/createnewdeal' || undefined}
+            onClick={(event) => {
+              event.preventDefault();
+              setActive('/createnewdeal');
+            }}
+          >
+             Create New Deal
+          </Link>        
         </div>
         <div className={classes.icon}>
         <Image
