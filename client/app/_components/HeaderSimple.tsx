@@ -16,7 +16,7 @@ const links = [
 export default function HeaderSimple() {
   const [opened, { toggle }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
-  const [, setLocation] = useLocation();
+  const [location, setLocation] = useLocation();
 
   const items = links.map((link) => (
     <Link
