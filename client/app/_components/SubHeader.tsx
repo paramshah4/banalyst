@@ -1,6 +1,7 @@
 'use client'
 import { Container, Group } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function SubHeader() {
@@ -20,7 +21,7 @@ export default function SubHeader() {
   const [active, setActive] = useState(links[0].link);
 
   const items = links.map((link) => (
-    <a
+    <Link
       key={link.label}
       href={link.link}
       data-active={active === link.link || undefined}
@@ -36,11 +37,12 @@ export default function SubHeader() {
         backgroundColor: "#F8F8F8",
       }}
     >
-      {link.label} <a style={{
+      {link.label} 
+      {/* <Link style={{
         color: "#DDDDDD",
         paddingLeft: "1rem"
-      }}>X</a>
-    </a>
+      }}>X</Link> */}
+    </Link>
   ));
 
   return (
