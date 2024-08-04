@@ -5,6 +5,7 @@ import SubHeader from "./SubHeader";
 import { FooterLinks } from "./FooterLinks";
 import DataView from "./DataView";
 import BalanceSheet from "./BalanceSheet";
+import IncomeStatement from "./IncomeStatement";
 
 export default function DashboardContainer() {
     
@@ -19,6 +20,7 @@ export default function DashboardContainer() {
             <SubHeader />
             <DataView />
             <BalanceSheet />
+            <IncomeStatement />
             <FooterLinks />
         </Container>
     )
