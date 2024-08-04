@@ -6,6 +6,8 @@ import { FooterLinks } from "./FooterLinks";
 import DataView from "./DataView";
 import BalanceSheet from "./BalanceSheet";
 import IncomeStatement from "./IncomeStatement";
+import CashFlow from "./CashFlowStatement";
+
 
 export default function DashboardContainer() {
     
@@ -21,6 +23,7 @@ export default function DashboardContainer() {
             <DataView />
             <BalanceSheet />
             <IncomeStatement />
+            <CashFlow />
             <FooterLinks />
         </Container>
     )
