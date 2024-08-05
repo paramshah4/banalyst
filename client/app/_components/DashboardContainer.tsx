@@ -7,6 +7,7 @@ import DataView from "./DataView";
 import BalanceSheet from "./BalanceSheet";
 import IncomeStatement from "./IncomeStatement";
 import CashFlow from "./CashFlowStatement";
+import CorpStructure from "./CorpStructure";
 
 
 export default function DashboardContainer() {
@@ -24,6 +25,7 @@ export default function DashboardContainer() {
             <BalanceSheet />
             <IncomeStatement />
             <CashFlow />
+            <CorpStructure />
             <FooterLinks />
         </Container>
     )
