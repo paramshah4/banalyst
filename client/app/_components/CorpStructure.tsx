@@ -2,11 +2,15 @@
 import React from "react";
 import Tree from "react-d3-tree";
 import { useCenteredTree } from "../utils/useCenteredTree";
+import { Title } from "@mantine/core";
 // import "./styles.css";
 
 const containerStyles = {
   width: "100vw",
   height: "100vh",
+  display: "flex",
+  justifyContent: "center",
+  margin: "0 auto",
 };
 
 // Here we're using `renderCustomNodeElement` render a component that uses
@@ -110,15 +114,18 @@ export default function App() {
       style={containerStyles}
       ref={containerRef as unknown as React.RefObject<HTMLDivElement>}
     >
-      <Tree
-        data={mockCorpStructureData}
-        translate={translate as { x: number; y: number }}
-        nodeSize={nodeSize}
-        renderCustomNodeElement={(rd3tProps) =>
-          renderForeignObjectNode({ ...rd3tProps, foreignObjectProps })
-        }
-        orientation="vertical"
-      />
+      <Title order={2}>Corp Structure</Title>
+      <div style={{ width: "80%", height: "100%", border: "1px solid black" }}>
+        <Tree
+          data={mockCorpStructureData}
+          translate={translate as { x: number; y: number }}
+          nodeSize={nodeSize}
+          renderCustomNodeElement={(rd3tProps) =>
+            renderForeignObjectNode({ ...rd3tProps, foreignObjectProps })
+          }
+          orientation="vertical"
+        />
+      </div>
     </div>
   );
 }

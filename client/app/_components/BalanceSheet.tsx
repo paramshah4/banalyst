@@ -26,7 +26,7 @@ interface BalanceSheetData {
   };
 }
 
-export const mockBalanceSheetData: BalanceSheetData = {
+const mockBalanceSheetData: BalanceSheetData = {
   assets: {
     nonCurrentAssets: [
       {
@@ -243,12 +243,12 @@ export const mockBalanceSheetData: BalanceSheetData = {
   },
 };
 
-const BalanceSheet = ({data}: {data: BalanceSheetData}) => {
+const BalanceSheet = () => {
   const [balanceSheetData, setbalanceSheetData] = useState<BalanceSheetData | null>(null);
   
-  useEffect(() => {
-    setbalanceSheetData(data)
-  }, [data]);
+  // useEffect(() => {
+  //   setbalanceSheetData(data)
+  // }, [data]);
 
  const ths = (
     <Table.Tr>
@@ -277,8 +277,6 @@ const BalanceSheet = ({data}: {data: BalanceSheetData}) => {
     </Table.Tr>
   );
 
-
-  console.log('data: ', mockBalanceSheetData)
   return (
     <>
       <Title order={2}>Balance Sheet</Title>
@@ -295,7 +293,7 @@ const BalanceSheet = ({data}: {data: BalanceSheetData}) => {
               <strong>Non-current assets</strong>
             </Table.Td>
           </Table.Tr>
-          {balanceSheetData?.assets.nonCurrentAssets.map((item) =>
+          {mockBalanceSheetData.assets.nonCurrentAssets.map((item) =>
             renderRow(item, true)
           )}
           <Table.Tr>
@@ -303,7 +301,7 @@ const BalanceSheet = ({data}: {data: BalanceSheetData}) => {
               <strong>Current assets</strong>
             </Table.Td>
           </Table.Tr>
-          {balanceSheetData?.assets.currentAssets.map((item) =>
+          {mockBalanceSheetData.assets.currentAssets.map((item) =>
             renderRow(item, true)
           )}
           <Table.Tr>
@@ -317,7 +315,7 @@ const BalanceSheet = ({data}: {data: BalanceSheetData}) => {
               <strong>EQUITY</strong>
             </Table.Td>
           </Table.Tr>
-          {balanceSheetData?.equity.map((item) => renderRow(item))}
+          {mockBalanceSheetData.equity.map((item) => renderRow(item))}
 
           <Table.Tr>
             <Table.Td>
@@ -329,7 +327,7 @@ const BalanceSheet = ({data}: {data: BalanceSheetData}) => {
               <strong>Current liabilities</strong>
             </Table.Td>
           </Table.Tr>
-          {balanceSheetData?.liabilities.currentLiabilities.map((item) =>
+          {mockBalanceSheetData.liabilities.currentLiabilities.map((item) =>
             renderRow(item, true)
           )}
           <Table.Tr>
@@ -337,7 +335,7 @@ const BalanceSheet = ({data}: {data: BalanceSheetData}) => {
               <strong>Non-current liabilities</strong>
             </Table.Td>
           </Table.Tr>
-          {balanceSheetData?.liabilities.nonCurrentLiabilities.map((item) =>
+          {mockBalanceSheetData.liabilities.nonCurrentLiabilities.map((item) =>
             renderRow(item, true)
           )}
 

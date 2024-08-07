@@ -1,7 +1,6 @@
 'use client'
 import { Container, Image, Flex, Table } from "@mantine/core";
 import classes from "../styles/Overview.module.css";
-import { Link, useLocation } from "wouter";
 
 export default function Overview() {
   const elements = [
@@ -90,40 +89,45 @@ export default function Overview() {
         justifyContent: "space-between",
         maxWidth: "80%",
         flexWrap: "wrap",
+        alignItems: "top",
       }}
     >
       <Container
         display={"flex"}
         style={{
           flexDirection: "row",
-          margin: "0",
-          justifyContent: "center",
-          alignItems: "center",
+          margin: 0,
+          width: "50%",
+          height: "auto",
+          justifyContent: "flex-start",
+          // alignItems: "top",
         }}
       >
         <div
           style={{
             display: "flex",
-            justifyContent: "flex-start",
+            justifyContent: "flex-end",
             alignItems: "center",
-            width: "100px",
-            height: "100px",
+            width: "50%",
+            height: "50%",
             borderRadius: "50%",
             overflow: "hidden",
             marginRight: "20px",
+            padding: 0,
           }}
         >
           <Image
-            src="/BananaLogisticsLogo.jpg"
+            src="BananaLogisticsLogo.jpg"
             alt="Overview"
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            // style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />
         </div>
         <Flex
           display="flex"
           direction={"column"}
           style={{
-            justifyContent: "center",
+            // justifyContent: "center",
+            width: "100%",
           }}
         >
           <div>

@@ -4,7 +4,7 @@ import Overview from "./Overview";
 import SubHeader from "./SubHeader";
 import { FooterLinks } from "./FooterLinks";
 import DataView from "./DataView";
-import BalanceSheet, {mockBalanceSheetData } from "./BalanceSheet";
+import BalanceSheet from "./BalanceSheet";
 import IncomeStatement from "./IncomeStatement";
 import CashFlow from "./CashFlowStatement";
 import CorpStructure from "./CorpStructure";
@@ -23,7 +23,7 @@ export default function DashboardContainer() {
             <Overview />
             <SubHeader />
             <DataView />
-            <BalanceSheet data={mockBalanceSheetData} />
+            <BalanceSheet />
             <IncomeStatement />
             <CashFlow />
             <CorpStructure />
