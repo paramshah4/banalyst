@@ -3,10 +3,10 @@ import { useState } from "react";
 import { Container, Image, Group, Burger, UnstyledButton, rem } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import classes from "../styles/HeaderSimple.module.css";
-import { Link, useLocation } from "wouter";
+import Link from "next/link";
 
 const links = [
-  // { link: "/home", label: "Home" },
+  { link: "/", label: "Home" },
   { link: "/dashboard", label: "Dashboard" },
   { link: "/dataroom", label: "Data Room" },
   { link: "/chat", label: "Chat" },
@@ -16,21 +16,15 @@ const links = [
 export default function HeaderSimple() {
   const [opened, { toggle }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
-  const [location, setLocation] = useLocation();
 
   const items = links.map((link) => (
-    <Link
+    <a
       key={link.label}
       href={link.link}
-      // className={classes.link}
       className={classes.bottomNavLink}
-      data-active={active === link.link || undefined}
-      onClick={() => {
-        setActive(link.link);
-      }}
     >
       {link.label}
-    </Link>
+    </a>
   ));
 
   return (
@@ -50,7 +44,6 @@ export default function HeaderSimple() {
             padding: rem(14) + " " + rem(16),
             fontSize: rem(32),
           }}
-          onClick={() => setLocation("/")}
         >
           Verus Intel
         </UnstyledButton>

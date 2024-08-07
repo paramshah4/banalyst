@@ -10,7 +10,6 @@ export default function DashboardLayout({
   }) {
     return (
       <section>
-        <HeaderSimple />
         {/* <DashboardContainer /> */}
         {children}
       </section>

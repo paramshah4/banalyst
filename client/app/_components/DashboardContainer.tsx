@@ -4,13 +4,12 @@ import Overview from "./Overview";
 import SubHeader from "./SubHeader";
 import { FooterLinks } from "./FooterLinks";
 import DataView from "./DataView";
-import BalanceSheet from "./BalanceSheet";
+import BalanceSheet, {mockBalanceSheetData } from "./BalanceSheet";
 import IncomeStatement from "./IncomeStatement";
 import CashFlow from "./CashFlowStatement";
 import CorpStructure from "./CorpStructure";
 import CapTable from "./CapTable";
 import ManagementBackground from "./ManagementBackground";
-
 
 export default function DashboardContainer() {
     
@@ -24,7 +23,7 @@ export default function DashboardContainer() {
             <Overview />
             <SubHeader />
             <DataView />
-            <BalanceSheet />
+            <BalanceSheet data={mockBalanceSheetData} />
             <IncomeStatement />
             <CashFlow />
             <CorpStructure />

@@ -1,4 +1,4 @@
-import { Flex } from "@mantine/core";
+import { Flex, Title } from "@mantine/core";
 
 interface ManagementBackgroundItem {
   name: string;
@@ -75,6 +75,13 @@ export default function ManagementBackground() {
         width: "80%",
         textAlign: "left",
     }}>
+      <Title order={2} style={{
+        marginLeft: "2.5em",
+        marginTop: "2.5em",
+        marginBottom: "2.5em",
+      }}>
+        Management Background
+      </Title>
       {mockManagementBackgroundData.bobSmith.map((item) => renderBio(item))}
       {mockManagementBackgroundData.johnSmith.map((item) => renderBio(item))}
       {mockManagementBackgroundData.johnDoe.map((item) => renderBio(item))}
