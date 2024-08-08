@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Tree from "react-d3-tree";
 import { useCenteredTree } from "../utils/useCenteredTree";
 import { Title } from "@mantine/core";
@@ -106,9 +106,16 @@ const mockCorpStructureData = {
 };
 
 export default function App() {
+  const [showTree, setShowTree] = useState(false);
   const [translate, containerRef] = useCenteredTree();
   const nodeSize = { x: 200, y: 200 };
   const foreignObjectProps = { width: nodeSize.x, height: nodeSize.y, x: 20 };
+
+  useEffect(() => {setShowTree(true)}, []);
+
+  if (!showTree) {
+    return <div>Loading...</div>;
+  }
   return (
     <div
       style={containerStyles}
