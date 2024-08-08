@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import ChatMessage from "./ChatMessage.tsx";
+import ChatMessage from "./ChatMessage";
 import { Container, UnstyledButton, Button, Avatar } from "@mantine/core";
 import brainIcon from "../assets/brain-icon.png";
 import chatSubmitIcon from "../assets/chat-submit.png";
@@ -9,9 +9,9 @@ import searchIcon from "../assets/search-icon.png";
 // import AIAvatarIcon from "../assets/AI-Avatar.png";
 
 function ChatInterface() {
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState<Array<{ isBot: boolean; text: string }>>([]);
   const [inputText, setInputText] = useState("");
-  const messagesEndRef = useRef(null);
+  const messagesEndRef = useRef<null | HTMLDivElement>(null);
 
   const scrollToBottom = () => {
     messagesEndRef?.current?.scrollIntoView({ behavior: "smooth" });
@@ -19,7 +19,7 @@ function ChatInterface() {
 
   useEffect(scrollToBottom, [messages]);
 
-  const handleSendMessage = async (event) => {
+  const handleSendMessage = async (event: { preventDefault: () => void; }) => {
     event.preventDefault();
     if (!inputText.trim()) return; // Prevent sending empty messages
 
@@ -125,7 +125,8 @@ function ChatInterface() {
             }}
           >
             <img
-              src={searchIcon}
+              src={searchIcon.src}
+              alt="Search"
             />
           </UnstyledButton>
         </Container>
@@ -158,7 +159,7 @@ function ChatInterface() {
               paddingLeft: "1em",
             }}
           >
-            <img src={settingsIcon} style={{ marginRight: "1em" }} />
+            <img src={settingsIcon.src} style={{ marginRight: "1em" }} alt="Settings" />
             Settings
           </UnstyledButton>
           <UnstyledButton
@@ -179,10 +180,11 @@ function ChatInterface() {
             }}
           >
             <Avatar
-              src={avatarIcon}
+              src={avatarIcon.src}
               style={{
                 marginRight: "1em",
               }}
+              alt="Avatar"
             ></Avatar>
             John Smith
           </UnstyledButton>
@@ -222,12 +224,13 @@ function ChatInterface() {
           }}
         >
           <img
-            src={brainIcon}
+            src={brainIcon.src}
             style={{
               width: "2em",
               height: "2em",
               marginRight: "1em",
             }}
+            alt="Brain"
           />
           <input
             type="text"
@@ -255,8 +258,9 @@ function ChatInterface() {
             }}
           >
             <img
-              src={chatSubmitIcon}
+              src={chatSubmitIcon.src}
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              alt="Submit"
             />
           </UnstyledButton>
         </form>

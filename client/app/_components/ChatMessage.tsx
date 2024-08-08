@@ -1,10 +1,10 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 
-function ChatMessage({ message }) {
+function ChatMessage({ message }: { message: { isBot: boolean; text: string } }) {
   // Only parse markdown for bot messages
   const content = message.isBot ? (
-    <ReactMarkdown children={message.text} />
+    <ReactMarkdown>{message.text}</ReactMarkdown>
   ) : (
     message.text
   );
